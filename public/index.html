@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#173f39">
+  <meta name="description" content="Tu guía de San Martín de los Andes: clima, paseos, vuelos de Chapelco y servicios locales, con fuentes y fechas.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="San Martín">
+  <title>San Martín de los Andes · Tu guía local</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/icon.svg">
+  <link rel="apple-touch-icon" href="./assets/icon-180.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Ir al contenido</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="#inicio" aria-label="San Martín de los Andes, inicio"><img src="./assets/icon.svg" width="48" height="48" alt=""><span>San Martín<span class="brand-sub">DE LOS ANDES</span></span></a>
+    <nav aria-label="Navegación principal"><a class="home-link" href="#inicio">⌂ <span>Inicio</span></a><button id="exit-button" class="exit-button" type="button">Salir ↗</button></nav>
+  </div></header>
+  <div id="offline" class="offline" hidden>Sin conexión. Las consultas actuales pueden no estar disponibles.</div>
+  <main id="main" tabindex="-1"><p class="loading" role="status">Preparando tu guía…</p></main>
+  <footer><div class="footer-inner"><span>Un lugar para disfrutar, a tu ritmo.</span><span>Versión 1.0.0 · Implementada el 8/11/2026<br>Hora argentina · America/Argentina/Buenos_Aires</span></div></footer>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <dialog id="exit-dialog" aria-labelledby="exit-title"><h2 id="exit-title">Salir de la app</h2><p>Podés cerrar esta pestaña o volver a la pantalla de inicio del teléfono.</p><button id="return-button" class="primary">Volver a la app</button></dialog>
+</body></html>

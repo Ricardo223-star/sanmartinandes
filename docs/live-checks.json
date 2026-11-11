@@ -1,0 +1,30 @@
+{
+  "weather": {
+    "ok": true,
+    "consultedAt": "2026-11-08T21:15:12.123Z",
+    "count": 0,
+    "reportedAt": null,
+    "source": "https://open-meteo.com/en/docs"
+  },
+  "roads": {
+    "ok": true,
+    "consultedAt": "2026-11-08T21:40:32.654Z",
+    "count": 9,
+    "reportedAt": "2026-11-08T14:00:00-03:00",
+    "source": "https://w2.dpvneuquen.gov.ar/ParteDiario.pdf"
+  },
+  "news": {
+    "ok": true,
+    "consultedAt": "2026-11-08T21:40:33.440Z",
+    "count": 3,
+    "reportedAt": null,
+    "source": "https://prensa.sma.gob.ar/?feed=rss2"
+  },
+  "arrivals": {
+    "ok": true,
+    "consultedAt": "2026-11-08T21:40:34.079Z",
+    "count": 0,
+    "reportedAt": null,
+    "source": "https://fids.aeropuertochapelco.com/P26/arrp24.php"
+  }
+}

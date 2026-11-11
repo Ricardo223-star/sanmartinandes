@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Arribos Aeropuerto Chapelco 2024</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="100">
+   
+    <!-- ============ CSS ============ -->
+    <link rel="stylesheet" href="pantalla.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="container" class="cont74">
+        <!-- Header con Logo y Reloj -->
+        <div class="container-fluid mt-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="../img/Logo-Aeropuerto-color_Logo.svg" alt="Logo" class="img-fluid">
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4 marg d-flex flex-column align-items-end">
+                    <p class="clock text-end mb-auto"><span id="horaActual"></span></p>
+                    <p class="fecha text-end mb-auto"><span id="fechaActual"></span></p>
+                </div>
+            </div>
+        </div>
+
+          <div class="wg col1">
+            <header>
+                <ul>
+                    <li class="bot-dep active">
+                        
+                           <svg class="icon-flight icon-flight--arrival" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2.5 1.5V22l4-1 4 1v-1.5L13 19v-5.5l8 2.5z"/>
+</svg>
+            
+                        
+                    </li>
+                    <li> <h1 class=titu >Arribos<span class="idioma"> / Arrivals</span></h1></li>
+                    
+                </ul>
+            </header>
+
+            <!-- Tabla de Vuelos -->
+            <section class="data">
+                <ul>
+                    <!-- Encabezados -->
+                    <li class="top hidden-xs">
+                        <div class="c1">Aerolinea<span class="idioma"> / Airline</span></div>
+                        <div class="c2">Vuelo<span class="idioma"> / Flight</span></div>
+                        <div class="c3">Procedencia<span class="idioma"> / From</span></div>
+                        <div class="c4">Hora<span class="idioma"> / Hour</span></div>
+                        <div class="c5">Estima</div>
+                        <div class="c6">Estado<span class="idioma"> / Status</span></div>
+                        <!--<div class="c7">Puerta<span class="idioma"> / Gate</span></div>-->
+                    </li>
+
+                    <!-- Listado de Vuelos -->
+                                            <li class="dl text-center py-4">
+                            No hay vuelos programados para hoy
+                        </li>
+                                    </ul>
+            </section>
+
+            <!-- Marquesina -->
+            <style>
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #253F6B;
+        z-index: 1000;
+    }
+
+    .ticker-wrap {
+        width: 100%;
+        background-color: #FFCA46;
+        padding: 5px 0;
+        height: auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ticker {
+        display: inline-block;
+        white-space: nowrap;
+        padding-left: 100%;
+        animation: marquee 40s linear infinite;
+        will-change: transform;
+    }
+
+    @keyframes marquee {
+        0% { transform: translate3d(0, 0, 0); }
+        100% { transform: translate3d(-100%, 0, 0); }
+    }
+
+    .item-collection-1 {
+        display: inline-block;
+    }
+
+    .item {
+        display: inline-flex;
+        align-items: center;
+        padding: 0 2rem;
+        font-size: 1.2rem;
+        color: black;   
+        font-weight: 600;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    }
+
+    .message-icon {
+        display: inline-block;
+        font-size: 1.50rem;
+        margin-right: 1rem;
+        vertical-align: middle;
+    }
+
+    .message-alert .message-icon {
+        color: #dc3545;
+        animation: alert-blink 2s infinite;
+    }
+
+    @keyframes alert-blink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0.5; }
+    }
+
+    .message-separator {
+        display: inline-block;
+        margin: 0 2rem;
+        font-size: 1.5rem;
+        color: #253F6B;
+        font-weight: bold;
+    }
+</style>
+
+<footer class="footer">
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <span class="item-collection-1">
+                                    <span class="item ">
+                        <span class="message-icon">✈️</span>
+                        Conoce todo lo que Neuquén tiene para ofrecer en www.turismo.neuquen.gob.ar                    </span>
+                    <span class="message-separator">|</span>
+                                    <span class="item ">
+                        <span class="message-icon">✈️</span>
+                        Cualquier duda o consulta sobre el estado de los vuelos acercate a los mostradores de las Aerolineas.                    </span>
+                    <span class="message-separator">|</span>
+                            </span>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    function initMarquee() {
+        const ticker = document.querySelector('.ticker');
+        const itemCollection = document.querySelector('.item-collection-1');
+        
+        if (!ticker || !itemCollection) return;
+        
+        // Eliminar clones previos si existen
+        const clones = ticker.querySelectorAll('.item-collection-1:not(:first-child)');
+        clones.forEach(clone => clone.remove());
+        
+        // Clonar contenido para animación continua
+        ticker.appendChild(itemCollection.cloneNode(true));
+        
+        // Ajustar velocidad según cantidad de contenido
+        const totalWidth = ticker.scrollWidth;
+        const duration = Math.max(30, totalWidth / 100);
+        ticker.style.animationDuration = `${duration}s`;
+    }
+
+    initMarquee();
+    setInterval(initMarquee, 60000);
+});
+</script>
+        </div>
+    </div>
+
+    <!-- Script para fecha y hora -->
+    <script>
+    const mostrarFechaHoraActual = () => {
+        const fechaHoraActual = new Date();
+        const opcionesFormato = { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric',
+            timeZone: 'America/Argentina/Buenos_Aires'
+        };
+
+        document.getElementById('fechaActual').textContent = 
+            fechaHoraActual.toLocaleDateString('es-AR', opcionesFormato);
+        document.getElementById('horaActual').textContent = 
+            fechaHoraActual.toLocaleTimeString('es-AR');
+    };
+
+    setInterval(mostrarFechaHoraActual, 1000);
+    mostrarFechaHoraActual();
+    </script>
+</body>
+</html>
